@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>课程</title>
+        <link href="/styles.css" rel="stylesheet" />
+    </head >
+
+    <body class="paper">
+
+        <form action="/teacher/schedule" method="post">
+            学期: <input type="text" name="semester">
+            <input type="submit" value="查询">
+        </form>
+
+        <form action="/teacher/kecheng" method="post">
+            课程: <input type="text" name="semester">
+            <input type="submit" value="查询">
+        </form>
+
+        <table style="margin-bottom:10px" >
+            <tr>
+                <th>课程名</th>
+                <th>学期</th>
+                <th>课程时间</th>
+                <th>课程地点</th>
+            </tr>      
+            {% for item in items4 %}
+            <tr>
+                <td>{{ item[0] }}</td>
+                <td>{{ item[1] }}</td>
+                <td>{{ item[2] }}</td>
+                <td>{{ item[3] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <form action="/login2" method="get" >
+            <input type="submit" value="退出登录">
+        </form>
+    </body>
+</html>
